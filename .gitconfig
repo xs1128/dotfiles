@@ -1,7 +1,7 @@
 [user]
 	name = Xinsheng Ooi
 	email = 84843079+xs1128@users.noreply.github.com
-    signingkey = 72C03917ADD6020DC147D3F70FD050EF14194831
+	signingkey = 0FD050EF14194831
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
@@ -11,3 +11,5 @@
 	program = gpg
 [commit]
 	gpgsign = true
+[tag]
+	gpgSign = true

@@ -1,5 +1,5 @@
 format = """
-$hostname$directory$c$cpp$cmake$python$lua$ruby$docker_context$package$nodejs| \
+$hostname$directory$all| \
 $os| \
 $line_break\
 $character\
@@ -20,11 +20,6 @@ success_symbol = "[>](bold green)"
 error_symbol = "[X](bold red)"  
 vimcmd_symbol = "[<](bold green)"
 
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-format = '[  $time ](fg:"#fbf1c7")'
-
 [directory]
 format = "[ $path ](bold blue)"
 read_only = " 󰌾"
@@ -37,8 +32,8 @@ read_only = " 󰌾"
 
 [hostname]
 ssh_only = false
+detect_env_vars = ['!TMUX'] # , 'SSH_CONNECTION'
 ssh_symbol = " "
-detect_env_vars = ['!TMUX', 'SSH_CONNECTION']
 format = '[$ssh_symbol](bold blue) on [$hostname](bold red) at'
 style = "bold blue"
 aliases = {"xss-MacBook-Air" = "xs's Mac"}

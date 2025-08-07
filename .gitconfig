@@ -3,7 +3,8 @@
     ci = commit
     co = checkout
     st = status
-	graph = log --all --graph --decorate --abbrev-commit --stat
+    graph = log --all --graph --decorate --abbrev-commit --color --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	graphh = log --all --graph --decorate --abbrev-commit --stat --color
     last = log -1 HEAD
     staash = stash --all
     bb = !~/.dotfiles/better-branch.sh

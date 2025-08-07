@@ -7,6 +7,9 @@ Plug 'scrooloose/syntastic'
 
 call plug#end()
 
+" Add cursorline for indication
+set cursorline
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -95,4 +98,4 @@ nnoremap <Down>  :echoe "Use j"<CR>
 inoremap <Left>  <ESC>:echoe "Use h"<CR>
 inoremap <Right> <ESC>:echoe "Use l"<CR>
 inoremap <Up>    <ESC>:echoe "Use k"<CR>
-i
+inoremap <Down>  <ESC>:echoe "Use j"<CR>

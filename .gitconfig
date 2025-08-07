@@ -1,15 +1,48 @@
-[user]
-	name = Xinsheng Ooi
-	email = 84843079+xs1128@users.noreply.github.com
-	signingkey = 0FD050EF14194831
+[alias]
+    br = branch
+    ci = commit
+    co = checkout
+    st = status
+	graph = log --all --graph --decorate --abbrev-commit --stat
+    last = log -1 HEAD
+    staash = stash --all
+    bb = !~/.dotfiles/better-branch.sh
+
+[color]
+    ui = auto
+
+[commit]
+    gpgsign = true
+
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = nvim
-[alias]
-	graph = log --all --graph --decorate
+    autocrlf = input
+
+[fetch]
+    prune = true
+
 [gpg]
-	program = gpg
-[commit]
-	gpgsign = true
+    program = gpg
+
+; Use when needed
+; [includeIf "gitdir:~/Desktop/Codes/"]
+;     path = ~/Desktop/Codes/.gitconfig
+
+[init]
+	defaultBranch = main
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+
+[rerere]
+	enable = true
+
 [tag]
-	gpgSign = true
+    gpgSign = true
+
+[user]
+    email = ooixinsheng@gmail.com

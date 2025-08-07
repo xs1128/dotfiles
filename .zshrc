@@ -1,10 +1,17 @@
+# tmux
 eval "$(starship init zsh)"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
-#alias clang++='clang++ -std=c++20'
+export PATH="/opt/homebrew/opt/llvm/bin:/opt/homebrew/opt/util-linux/bin:/opt/homebrew/opt/util-linux/sbin:/opt/homebrew/opt/ruby/bin:$HOME/.local/bin:$PATH"
 
-# Created by `pipx` on 2025-02-22 15:41:58
-export PATH="$PATH:/Users/xsooi1128/.local/bin"
-export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
-export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+# GPG Signing
+if command -v gpg >/dev/null 2>&1; then
+  export GPG_TTY=$(tty)
+fi
+
+# Enable python venv to work properly
+export VIRTUAL_ENV_DISABLE_PROMPT=
+
+setopt correct
+setopt autocd

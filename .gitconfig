@@ -12,8 +12,11 @@
 [color]
     ui = auto
 
+[column]
+    ui = auto
+
 [commit]
-    gpgsign = true
+    gpgsign = false
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -27,8 +30,8 @@
     program = gpg
 
 ; Use when needed
-; [includeIf "gitdir:~/Desktop/Codes/"]
-;     path = ~/Desktop/Codes/.gitconfig
+[includeIf "gitdir:~/Desktop/"]
+    path = ~/Desktop/.gitconfig
 
 [init]
 	defaultBranch = main
@@ -44,6 +47,3 @@
 
 [tag]
     gpgSign = true
-
-[user]
-    email = ooixinsheng@gmail.com

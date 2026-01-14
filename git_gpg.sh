@@ -9,9 +9,9 @@ mkdir -p "$GPG_DIR"
 chmod 700 "$GPG_DIR"
 
 # config gpg agent to use pinentry
-PINENTRY_PATH="$(brew --prefix)/bin/pinentry-mac"
-if [[ ! -x "$PINENTRY_PATH" ]]; then
-  echo "Error: pinentry-mac not found at expected location: $PINENTRY_PATH"
+PINENTRY_PATH="$(command -v pinentry)"
+if [[ -z "$PINENTRY_PATH" ]]; then
+  echo "Error: pinentry not found"
   exit 1
 fi
 

@@ -1,7 +1,7 @@
 tap "hashicorp/tap"
 
 # Passphrase entry dialog utilizing the Assuan protocol
-brew "pinentry-mac"
+brew "pinentry"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 brew "gpg2"

@@ -37,12 +37,22 @@ if ! grep -Fxq "$TTY_LINE" "$SHELL_RC" 2>/dev/null; then
   echo "$TTY_LINE" >> "$SHELL_RC"
 fi
 
+# check if any secret keys exist
+KEY_COUNT=$(gpg --list-secret-keys --keyid-format=long 2>/dev/null | grep -c "^sec" || echo "0")
+
 # create gpg key and continue on
 echo "If you already have a GPG key, import or skip. Otherwise generate one."
 echo "To generate a new key, use: gpg --full-generate-key"
 read -p "Do you want to generate a new GPG key now? (y/N): " GENERATE
 if [[ "$GENERATE" =~ ^[Yy]$ ]]; then
   gpg --full-generate-key
+else
+  # check if we have any keys to work with
+  NEW_KEY_COUNT=$(gpg --list-secret-keys --keyid-format=long 2>/dev/null | grep -c "^sec" || echo "0")
+  if [[ "$NEW_KEY_COUNT" -eq 0 ]]; then
+    echo "No GPG keys available. Skipping Git GPG setup."
+    exit 0
+  fi
 fi
 
 # git side config

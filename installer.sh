@@ -23,10 +23,13 @@ run_if "command -v brew >/dev/null" brew.sh
 echo "==> 2. autojump"
 run_if "command -v autojump >/dev/null" autojump.sh
 
-echo "==> 3. git gpg"
+echo "==> 3. tmux"
+run_if "command -v tmux >/dev/null" tmux.sh
+
+echo "==> 4. git gpg"
 run_if "command -v gpg >/dev/null" git_gpg.sh
 
-echo "==> 4. github gpg"
+echo "==> 5. github gpg"
 if git config --global --get user.signingkey >/dev/null 2>&1; then
   chmod u+x github_gpg.sh
   ./github_gpg.sh

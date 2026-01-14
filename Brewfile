@@ -1,17 +1,26 @@
 tap "hashicorp/tap"
 
-# Passphrase entry dialog utilizing the Assuan protocol
+# gpg
 brew "pinentry"
-# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 brew "gpg2"
-# Shell extension to jump to frequently used directories
+# tools
 brew "autojump"
-# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Simplified and community-driven man pages
 brew "tldr"
-# Terminal multiplexer
 brew "tmux"
+# brew "python3"
+# brew "create-dmg"
+# brew "nasm"
+# brew "cmake"
+# brew "gcc"
+brew "wget"
+# brew "ninja"
+# brew "pkg-config"
+# brew "rustup"
 
 cask "docker-desktop"
+cask "rectangle"
+cask "rustdesk"
+cask "tailscale-app"
+cask "jordanbaird-ice@beta"

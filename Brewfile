@@ -19,8 +19,12 @@ brew "wget"
 # brew "pkg-config"
 # brew "rustup"
 
-cask "docker-desktop"
+# must
+cask "jordanbaird-ice@beta"
 cask "rectangle"
+
+# if server
+cask "docker-desktop"
+cask "jellyfin"
 cask "rustdesk"
 cask "tailscale-app"
-cask "jordanbaird-ice@beta"

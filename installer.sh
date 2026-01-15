@@ -26,16 +26,26 @@ run_if "command -v autojump >/dev/null" autojump.sh
 echo "==> 3. tmux"
 run_if "command -v tmux >/dev/null" tmux.sh
 
-echo "==> 4. git gpg"
-run_if "command -v gpg >/dev/null" git_gpg.sh
+echo "==> 4–5. Git & GitHub GPG"
 
-echo "==> 5. github gpg"
-if git config --global --get user.signingkey >/dev/null 2>&1; then
-  chmod u+x github_gpg.sh
-  ./github_gpg.sh
-elif prompt "GPG key unclear, run GitHub GPG setup anyway?"; then
-  chmod u+x ithub_gpg.sh
-  ./github_gpg.sh
+if prompt "Setup gpg for git and github?"; then
+	echo "==> 4. git gpg"
+	run_if "command -v gpg >/dev/null" git_gpg.sh
+
+	echo "==> 5. github gpg"
+	if git config --global --get user.signingkey >/dev/null 2>&1; then
+	  chmod u+x github_gpg.sh
+	  ./github_gpg.sh
+	elif prompt "GPG key unclear, run GitHub GPG setup anyway?"; then
+	  chmod u+x github_gpg.sh
+	  ./github_gpg.sh
+	fi
+else
+	echo "gpg setup skipped."
 fi
+
+echo "==> 6. tool's dmg"
+chmod u+x manual.sh
+./manual.sh
 
 echo "==> Done"

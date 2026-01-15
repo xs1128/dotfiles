@@ -18,6 +18,7 @@ brew "wget"
 # brew "ninja"
 # brew "pkg-config"
 # brew "rustup"
+brew "zsh-autosuggestions"
 
 # must
 cask "jordanbaird-ice@beta"

@@ -21,18 +21,12 @@ prompt() {
 echo "==> 1. Brew install"
 run_if "command -v brew >/dev/null" brew.sh
 
-echo "==> 2. autojump"
-run_if "command -v autojump >/dev/null" autojump.sh
-
-echo "==> 3. tmux"
-run_if "command -v tmux >/dev/null" tmux.sh
-
-echo "==> 4–5. Git & GitHub GPG"
+echo "==> 2–3. Git & GitHub GPG"
 if prompt "Setup gpg for git and github?"; then
-	echo "==> 4. git gpg"
+	echo "==> 2. git gpg"
 	run_if "command -v gpg >/dev/null" git_gpg.sh
 
-	echo "==> 5. github gpg"
+	echo "==> 3. github gpg"
 	if git config --global --get user.signingkey >/dev/null 2>&1; then
 	  chmod u+x github_gpg.sh
 	  ./github_gpg.sh
@@ -44,11 +38,11 @@ else
 	echo "gpg setup skipped."
 fi
 
-echo "==> 6. tool's dmg"
+echo "==> 4. tool's dmg"
 chmod u+x manual.sh
 ./manual.sh
 
-echo "==> 7. aliases"
+echo "==> 5. config (tmux, aliases, autojump, auto-sugg)"
 chmod u+x config.sh
 ./config.sh
 

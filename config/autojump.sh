@@ -12,4 +12,3 @@ case "$SHELL" in
     add '[ -f /opt/homebrew/share/autojump/autojump.fish ]; and source /opt/homebrew/share/autojump/autojump.fish' ~/.config/fish/config.fish
     ;;
 esac
-

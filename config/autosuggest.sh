@@ -18,4 +18,3 @@ case "$SHELL" in
         ~/.config/fish/config.fish
     ;;
 esac
-

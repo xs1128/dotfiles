@@ -10,9 +10,10 @@ add() {
 }
 
 # append into
-chmod u+x "$CONFIG_DIR/autojump.sh" "$CONFIG_DIR/autosuggest.sh"
+chmod u+x "$CONFIG_DIR/autojump.sh" "$CONFIG_DIR/autosuggest.sh" "CONFIG_DIR/zsh-vi-mode.sh"
 . "$CONFIG_DIR/autojump.sh"
 . "$CONFIG_DIR/autosuggest.sh"
+. "$CONFIG_DIR/zsh-vi-mode.sh"
 
 # symbolic links
 ln -sf "$CONFIG_DIR/aliases.sh" "$HOME/.aliases.sh"
